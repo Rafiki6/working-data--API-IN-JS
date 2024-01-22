@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" id="cristiano" width="480">
+</body>
+
+<script>
+    console.log("About Cristiano")
+    fetch("./images/Cristiano.png")
+    .then(response => response.blob())
+    .then(item => {
+        // console.log(item)
+        document.getElementById("cristiano").src = URL.createObjectURL(item)
+
+    })
+    .catch(error => {
+        console.log("error!!!!");
+        console.log(error)
+    })
+</script>
+</html>

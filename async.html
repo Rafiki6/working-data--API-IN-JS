@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="" id="ronaldo" alt="">
+
+</body>
+<script>
+    console.log("About Cristiano")
+
+
+    async function catchCristiano() {
+        try {
+            const response = await fetch("../images/Ronald1.png");
+            const blob = await response.blob();
+            document.getElementById("ronaldo").scr = URL.createObjectURL(blob);
+            console.log(blob)
+            console.log("BEST PLAYER ON PLANET")
+
+        }
+
+        catch (error) {
+            console.log("ERROR!!!!")
+            console.log(error)
+        }
+    }
+    catchCristiano()
+</script>
+
+</html>
